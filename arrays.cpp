@@ -1,17 +1,21 @@
-//This is the introduction of arrays. Here user is giving the input.
+//pass by reference in array
 #include <iostream>
 using namespace std;
+void changeArr(int arr[], int size)
+{
+  for (int i = 0; i < size; i++)
+  {
+    arr[i] = 3 * arr[i];
+  }
+}
 int main()
 {
-  //Student's marks are being recorded by user with the help of following code.
-  int marks[5];
-  for (int i = 0; i < 5; i++)
+  int arr[] = {3, 4, 5, 6};
+  changeArr(arr, 4);
+  for (int i = 0; i < 3; i++)
   {
-    cin >> marks[i];
+    cout << arr[i] << " ";
   }
-  for (int i = 0; i < 5; i++)
-  {
-    cout << marks[i] << "\t";
-  }
+  cout << endl;
   return 0;
 }
